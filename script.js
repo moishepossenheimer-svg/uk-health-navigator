@@ -71,3 +71,102 @@ function makeDiary(){
 function makeMedicineNotes(){
   document.getElementById("medicineResult").innerHTML = "<h3>Medication review notes</h3><p>Bring this list to your GP, pharmacist, nurse or specialist appointment.</p><pre>" + esc(document.getElementById("medicineList").value) + "</pre><p><strong>Questions to ask:</strong> What is each medicine for? Are there side effects to watch for? Do I need monitoring? What should I do if I miss a dose?</p>";
 }
+
+function getNavigatorValue(id){
+  const el = document.getElementById(id);
+  return el ? el.value : "";
+}
+
+function checkedNavigatorFlags(){
+  return [...document.querySelectorAll('input[name="navRedFlags"]:checked')].map(input => input.value);
+}
+
+function guidedNavigator(){
+  const result = document.getElementById("guidedNavigatorResult");
+  if (!result) return;
+
+  const age = getNavigatorValue("navAge");
+  const emergency = getNavigatorValue("navEmergency");
+  const urgency = getNavigatorValue("navUrgency");
+  const area = getNavigatorValue("navArea");
+  const severity = getNavigatorValue("navSeverity");
+  const duration = getNavigatorValue("navDuration");
+  const worse = getNavigatorValue("navWorse");
+  const mentalRisk = getNavigatorValue("navMentalRisk");
+  const existing = getNavigatorValue("navExisting");
+  const redFlags = checkedNavigatorFlags().filter(flag => flag !== "none");
+
+  let route = "GP surgery";
+  let priority = "Routine";
+  let reason = "The answers suggest this is best discussed with a GP surgery, especially if it is ongoing, affecting normal life, or needs review.";
+  let next = "Use the appointment planner to summarise the main problem, timeline, symptoms, medicines and questions.";
+  let className = "navigator-result route-gp";
+
+  if (emergency === "yes" || redFlags.length || mentalRisk === "immediate" || worse === "rapid") {
+    route = "999 or A&E";
+    priority = "Emergency";
+    reason = "One or more answers could fit a serious or rapidly worsening situation. Online tools should not delay emergency care.";
+    next = "Call 999 or go to A&E now. If there is immediate mental health danger, use emergency services or a local crisis route.";
+    className = "navigator-result route-emergency";
+  } else if (urgency === "now" || urgency === "unsure" || severity === "severe") {
+    route = "NHS 111";
+    priority = "Urgent / unsure";
+    reason = "The answers suggest help may be needed now, or it is unclear which service is safest.";
+    next = "Use NHS 111 online or call 111. They can direct you to urgent treatment, GP out-of-hours, pharmacy, A&E or another service.";
+    className = "navigator-result route-111";
+  } else if (area === "medicine" || existing === "pharmacy" || (severity === "mild" && duration !== "ongoing" && ["skin","infection","general"].includes(area))) {
+    route = "Pharmacy";
+    priority = "Common first step";
+    reason = "For many mild, short-term symptoms or medicine questions, a pharmacist can advise on common options and whether another service is needed.";
+    next = "Ask a pharmacist. If symptoms worsen, feel severe, or the pharmacist advises it, contact GP or NHS 111.";
+    className = "navigator-result route-pharmacy";
+  } else if (existing === "specialist" && (area === "longterm" || duration === "ongoing" || worse === "yes")) {
+    route = "Existing specialist team, or GP if you cannot reach them";
+    priority = "Use existing care route";
+    reason = "The answers mention an existing specialist or hospital team and an ongoing or changing issue.";
+    next = "Check clinic letters, patient portal details or nurse helpline information. Use NHS 111 if you need help now and are unsure.";
+    className = "navigator-result route-specialist";
+  } else if (area === "mental" || mentalRisk === "support") {
+    route = "GP, NHS talking therapies, or urgent mental health support";
+    priority = "Mental health support";
+    reason = "The answers point towards mental health support without an immediate safety emergency.";
+    next = "Contact your GP or local NHS mental health route. If safety changes or there is immediate danger, use 999/A&E.";
+    className = "navigator-result route-gp";
+  } else if (urgency === "today" || worse === "yes" || age === "child" || age === "pregnancy" || age === "older") {
+    route = "GP surgery, NHS 111 if you cannot get timely help";
+    priority = "Same-day or prompt advice";
+    reason = "The answers suggest the problem may need prompt professional advice, especially because of the person or worsening symptoms.";
+    next = "Contact the GP surgery and explain why help is needed today. Use NHS 111 if the GP is closed, unavailable, or you are unsure.";
+    className = "navigator-result route-gp";
+  }
+
+  const areaText = document.querySelector("#navArea option:checked")?.textContent || "Not specified";
+  const durationText = document.querySelector("#navDuration option:checked")?.textContent || "Not specified";
+  const severityText = document.querySelector("#navSeverity option:checked")?.textContent || "Not specified";
+
+  result.className = "result " + className;
+  result.innerHTML = `<h3>Suggested route: ${route}</h3>
+    <p><strong>Priority:</strong> ${priority}</p>
+    <p>${reason}</p>
+    <p><strong>Best next step:</strong> ${next}</p>
+    <div class="navigator-summary">
+      <strong>Summary to prepare:</strong>
+      <span>Main area: ${esc(areaText)}</span>
+      <span>Severity: ${esc(severityText)}</span>
+      <span>Duration: ${esc(durationText)}</span>
+    </div>
+    <p class="small"><strong>Reminder:</strong> this is a routing tool only. It does not diagnose, rule conditions in or out, or recommend treatment.</p>`;
+}
+
+function clearGuidedNavigator(){
+  ["navAge","navEmergency","navUrgency","navArea","navSeverity","navDuration","navWorse","navMentalRisk","navExisting"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.selectedIndex = 0;
+  });
+  document.querySelectorAll('input[name="navRedFlags"]').forEach(input => input.checked = false);
+  const result = document.getElementById("guidedNavigatorResult");
+  if (result) {
+    result.className = "result navigator-result";
+    result.innerHTML = 'Answer the questions, then choose "Suggest next route".';
+  }
+}

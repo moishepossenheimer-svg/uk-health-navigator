@@ -67,6 +67,86 @@
       </div>
     </section>
 
+    <section class="section navigator-section" aria-labelledby="guidedNavigatorTitle">
+      <div class="section-head">
+        <p class="eyebrow">Guided navigator</p>
+        <h2 id="guidedNavigatorTitle">Answer 10 quick questions to choose a sensible next route.</h2>
+        <p>This AI-style helper uses simple safety rules to suggest where to start: 999/A&amp;E, NHS 111, GP, pharmacy, an existing specialist team, or preparation tools. It does not diagnose or give treatment advice.</p>
+      </div>
+      <section class="tool-panel navigator-panel">
+        <div class="callout warning"><strong>Important:</strong> do not use this tool in place of urgent help. If it could be life-threatening, call 999 or go to A&amp;E.</div>
+        <div class="question-grid">
+          <label><span>1. Who is this for?</span><select id="navAge">
+            <option value="adult">Adult</option>
+            <option value="child">Child or young person</option>
+            <option value="older">Older adult or frailty concern</option>
+            <option value="pregnancy">Pregnant or recently gave birth</option>
+          </select></label>
+          <label><span>2. Could this be life-threatening?</span><select id="navEmergency">
+            <option value="no">No / not sure</option>
+            <option value="yes">Yes - possible emergency</option>
+          </select></label>
+          <label><span>3. Do they need help today?</span><select id="navUrgency">
+            <option value="unsure">Unsure</option>
+            <option value="now">Yes, help is needed now</option>
+            <option value="today">Yes, today but not immediately</option>
+            <option value="routine">No, routine appointment is OK</option>
+          </select></label>
+          <label><span>4. Main problem area</span><select id="navArea">
+            <option value="general">General symptoms or not sure</option>
+            <option value="breathing">Breathing, chest or severe allergy</option>
+            <option value="injury">Injury, burn, fall or wound</option>
+            <option value="infection">Possible infection or fever</option>
+            <option value="stomach">Stomach, bowel or urinary symptoms</option>
+            <option value="skin">Skin, rash or allergy</option>
+            <option value="mental">Mental health, panic, mood or safety</option>
+            <option value="medicine">Medicine, side effect or prescription question</option>
+            <option value="longterm">Existing long-term condition</option>
+          </select></label>
+          <label><span>5. How severe is it?</span><select id="navSeverity">
+            <option value="mild">Mild and manageable</option>
+            <option value="moderate">Moderate or affecting normal activities</option>
+            <option value="severe">Severe, unusual or hard to manage</option>
+          </select></label>
+          <label><span>6. How long has it been going on?</span><select id="navDuration">
+            <option value="hours">Hours / started today</option>
+            <option value="days">A few days</option>
+            <option value="weeks">More than 1-2 weeks</option>
+            <option value="ongoing">Ongoing or keeps coming back</option>
+          </select></label>
+          <label><span>7. Is it getting worse?</span><select id="navWorse">
+            <option value="no">No / stable</option>
+            <option value="yes">Yes, getting worse</option>
+            <option value="rapid">Rapidly worsening</option>
+          </select></label>
+          <fieldset class="check-group">
+            <legend>8. Any urgent warning signs?</legend>
+            <label><input type="checkbox" name="navRedFlags" value="breathing"> Severe breathing difficulty, blue lips, choking or severe allergic reaction</label>
+            <label><input type="checkbox" name="navRedFlags" value="chest"> Chest pain, signs of stroke, collapse, seizure or confusion</label>
+            <label><input type="checkbox" name="navRedFlags" value="bleeding"> Heavy bleeding, serious injury, severe burn or sudden severe pain</label>
+            <label><input type="checkbox" name="navRedFlags" value="none"> None of these</label>
+          </fieldset>
+          <label><span>9. Any mental health safety concern?</span><select id="navMentalRisk">
+            <option value="none">No immediate safety concern</option>
+            <option value="support">Needs mental health support but not immediate danger</option>
+            <option value="immediate">Immediate risk of harm or cannot stay safe</option>
+          </select></label>
+          <label><span>10. Is there already a care route?</span><select id="navExisting">
+            <option value="none">No existing team</option>
+            <option value="gp">GP already involved</option>
+            <option value="specialist">Existing specialist nurse, clinic or hospital team</option>
+            <option value="pharmacy">Mostly a medicine or pharmacy question</option>
+          </select></label>
+        </div>
+        <div class="button-row">
+          <button class="btn primary" onclick="guidedNavigator()">Suggest next route</button>
+          <button class="btn secondary" onclick="clearGuidedNavigator()">Clear answers</button>
+          <a class="btn secondary" href="ai-navigator.html">Open full page</a>
+        </div>
+        <div id="guidedNavigatorResult" class="result navigator-result">Answer the questions, then choose "Suggest next route".</div>
+      </section>
+    </section>
+
     <section class="section">
       <div class="section-head">
         <p class="eyebrow">What the site helps with</p>
@@ -123,6 +203,7 @@
       <div>
         <h2>Use the site</h2>
         <a href="where-to-get-help.html">Where to get help</a>
+        <a href="ai-navigator.html">Guided navigator</a>
         <a href="condition-finder.html">Condition finder</a>
         <a href="appointment-planner.html">Appointment planner</a>
         <a href="symptom-diary.html">Symptom diary</a>
@@ -143,5 +224,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
