@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Symptom diary generator - UK Health Navigator</title>
-  <meta name="description" content="Create a simple symptom diary to prepare for medical appointments.">
-  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/symptom-diary.html">
+  <title>Tools - UK Health Navigator</title>
+  <meta name="description" content="Appointment planner, symptom diary, medication tracker, referral checklist and hospital appointment checklist.">
+  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/tools.html">
   <meta name="google-site-verification" content="FsNwn114JdTeafqLikJG85e0l6nQn3NgH4KXecyO5Ko" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="stylesheet" href="styles.css">
@@ -32,26 +32,19 @@
   </div>
   <main class="page">
     <div class="page-hero">
-      <p class="eyebrow">Tool</p>
-      <h1>Symptom diary generator</h1>
-      <p class="lead">Create a simple printable diary to show patterns instead of relying on memory during an appointment.</p>
+      <p class="eyebrow">Tools</p>
+      <h1>Tools and printable planners</h1>
+      <p class="lead">Structured, printable tools for preparing appointments and explaining symptoms clearly. They do not assess symptoms or give medical advice.</p>
     </div>
-    <section class="tool-panel">
-      <div class="tool-layout">
-        <div>
-          <h2>Track what changes over time</h2>
-          <p>A diary can help you explain frequency, severity, triggers, medicine use and impact on daily life. It should support, not replace, a conversation with a healthcare professional.</p>
-          <div class="callout urgent"><strong>Do not wait with urgent symptoms:</strong> use NHS 111 if you need help now and are unsure, or 999/A&amp;E for emergencies.</div>
-        </div>
-        <div>
-          <label><span>Condition or symptom</span><textarea id="diaryCondition" rows="2" placeholder="Example: Crohn's symptoms, headaches, eczema flare"></textarea></label>
-          <label><span>What do you want to track?</span><textarea id="diaryTrack" rows="3" placeholder="Example: pain, bowel movements, sleep, triggers, medicines"></textarea></label>
-          <label><span>How many days?</span><input id="diaryDays" type="number" value="14" min="3" max="60"></label>
-          <div class="button-row"><button class="btn primary" onclick="makeDiary()">Create diary template</button><button class="btn secondary" onclick="window.print()">Print</button></div>
-          <div id="diaryResult" class="result"></div>
-        </div>
-      </div>
-    </section>
+    <div class="grid three">
+      <a class="card" href="ai-navigator.html"><span class="card-kicker">Guided route</span><h3>Guided route navigator</h3><p>Answer 10 quick questions to suggest a sensible first UK service route.</p></a>
+      <a class="card" href="appointment-planner.html"><span class="card-kicker">Before an appointment</span><h3>Appointment planner</h3><p>Prepare a concise timeline, symptom summary, medicine list and questions.</p></a>
+      <a class="card" href="symptom-diary.html"><span class="card-kicker">Track patterns</span><h3>Symptom diary</h3><p>Create a printable diary for days or weeks of symptoms, triggers and medicines.</p></a>
+      <a class="card" href="medication-tracker.html"><span class="card-kicker">Medicine review</span><h3>Medication tracker</h3><p>Record doses, missed doses, side effects and review questions.</p></a>
+      <a class="card" href="hospital-checklist.html"><span class="card-kicker">Hospital visit</span><h3>Hospital checklist</h3><p>Prepare documents, questions, travel details and follow-up notes.</p></a>
+      <a class="card" href="referral-checklist.html"><span class="card-kicker">Referral planning</span><h3>Referral checklist</h3><p>Plan what to ask when a referral or specialist review is being discussed.</p></a>
+      <a class="card" href="blood-test-basics.html"><span class="card-kicker">Results questions</span><h3>Blood test basics</h3><p>Prepare sensible questions about what results mean and what happens next.</p></a>
+    </div>
   </main>
   <footer class="footer">
     <div class="footer-grid">

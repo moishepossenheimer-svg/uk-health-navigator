@@ -1,7 +1,16 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="UK Health Navigator">
-  <rect width="512" height="512" rx="96" fill="#ffffff"/>
-  <path d="M92 150c0-32 26-58 58-58h212c32 0 58 26 58 58v212c0 32-26 58-58 58H150c-32 0-58-26-58-58V150z" fill="#005EB8"/>
-  <path d="M154 194h204v56H154zM228 120h56v260h-56z" fill="#fff"/>
-  <path d="M338 324c34-24 54-58 54-102 0-19-4-38-12-55 26 29 40 66 40 106 0 59-31 111-78 139l-4-88z" fill="#007C89"/>
-  <path d="M174 324c-34-24-54-58-54-102 0-19 4-38 12-55-26 29-40 66-40 106 0 59 31 111 78 139l4-88z" fill="#D9F0F3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="UK Health Navigator">
+  <defs>
+    <linearGradient id="markBg" x1="84" y1="60" x2="430" y2="438" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#005EB8"/>
+      <stop offset=".56" stop-color="#007C89"/>
+      <stop offset="1" stop-color="#113A56"/>
+    </linearGradient>
+  </defs>
+  <rect x="56" y="56" width="400" height="400" rx="92" fill="#fff"/>
+  <path d="M118 163c0-31 25-56 56-56h164c31 0 56 25 56 56v186c0 31-25 56-56 56H174c-31 0-56-25-56-56V163z" fill="url(#markBg)"/>
+  <path d="M256 145v222M145 256h222" stroke="#fff" stroke-width="44" stroke-linecap="round"/>
+  <path d="M349 160c37 42 45 109 17 160-19 35-52 60-90 70 65 2 124-37 147-98 21-57 6-121-38-162l-36 30z" fill="#D9F0F3" opacity=".95"/>
+  <path d="M163 352c-35-40-44-101-19-151 18-36 51-62 90-73-64 0-123 38-146 98-20 53-10 113 39 158l36-32z" fill="#B7E4EA" opacity=".7"/>
+  <circle cx="256" cy="256" r="30" fill="#fff"/>
+  <circle cx="256" cy="256" r="14" fill="#007C89"/>
 </svg>

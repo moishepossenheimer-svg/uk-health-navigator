@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Condition finder - UK Health Navigator</title>
-  <meta name="description" content="Choose a condition category and get a UK help route, tracking ideas and trusted links.">
-  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/condition-finder.html">
+  <title>Hay fever help in the UK - routes, questions and trusted links</title>
+  <meta name="description" content="UK navigation resource for Hay fever: who to contact, what to track, appointment questions and trusted links.">
+  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/condition-hay-fever.html">
   <meta name="google-site-verification" content="FsNwn114JdTeafqLikJG85e0l6nQn3NgH4KXecyO5Ko" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="stylesheet" href="styles.css">
@@ -30,24 +30,50 @@
   <div class="safety-strip">
     <strong>Emergency:</strong> call <strong>999</strong> or go to <strong>A&amp;E</strong>. <strong>Unsure and need help now:</strong> use <a href="https://111.nhs.uk/" target="_blank" rel="noopener">NHS 111</a>. Information only, not medical advice.
   </div>
-  <main class="page">
-    <div class="page-hero">
-      <p class="eyebrow">Tool</p>
-      <h1>Condition finder</h1>
-      <p class="lead">Pick a condition or topic to see a usual UK route for help, useful tracking prompts and a link to the full resource page.</p>
+  <main class="page condition-page">
+    <div class="condition-top">
+      <div class="page-hero">
+        <p class="eyebrow">Allergy</p>
+        <h1>Hay fever: UK help routes and appointment preparation</h1>
+        <p class="lead">A practical resource page for preparing notes and finding trusted UK information. It does not diagnose symptoms, recommend treatment or replace professional medical advice.</p>
+      </div>
+      <aside class="at-a-glance">
+        <h2>At a glance</h2>
+        <div class="fact"><strong>Usual starting point</strong><span>Pharmacist for common treatment advice, GP if severe or not improving</span></div>
+        <div class="fact"><strong>Helpful to track</strong><span>Season, triggers, eye and nose symptoms, sleep impact and medicines tried.</span></div>
+        <div class="fact"><strong>Need help now?</strong><span>Use NHS 111 if you are unsure and need urgent advice. Call 999 or go to A&amp;E for a life-threatening emergency.</span></div>
+      </aside>
     </div>
-    <section class="tool-panel">
-      <div class="tool-layout">
-        <div>
-          <h2>Choose a topic</h2>
-          <p>This tool gives general navigation prompts only. It cannot tell you what condition you have or what treatment you need.</p>
-          <div class="callout urgent"><strong>Safety:</strong> call 999 or go to A&amp;E for a life-threatening emergency. Use NHS 111 if you need help now and are unsure.</div>
-        </div>
-        <div>
-          <label><span>Condition or topic</span><select id="conditionSelect"><option value="">Choose one</option><option value="crohns-disease">Crohn's disease</option><option value="ulcerative-colitis">Ulcerative colitis</option><option value="ibs">Irritable bowel syndrome (IBS)</option><option value="coeliac-disease">Coeliac disease</option><option value="asthma">Asthma</option><option value="diabetes">Diabetes</option><option value="eczema">Eczema</option><option value="psoriasis">Psoriasis</option><option value="migraine">Migraine</option><option value="arthritis">Arthritis</option><option value="anxiety">Anxiety</option><option value="depression">Depression</option><option value="adhd">ADHD</option><option value="autism">Autism</option><option value="acne">Acne</option><option value="hay-fever">Hay fever</option></select></label>
-          <button class="btn primary" onclick="conditionFinder()">Show route</button>
-          <div id="conditionResult" class="result">Choose a condition and press the button.</div>
-        </div>
+    <section class="article">
+      <h2>What this page is for</h2>
+      <p>Use this page to prepare for a conversation with a GP surgery, pharmacist, NHS 111, an existing specialist team or a relevant support organisation. It is designed to help you explain what has changed and what support you need.</p>
+      <div class="callout urgent"><strong>Emergency safety:</strong> if symptoms could be life-threatening, call 999 or go to A&amp;E. If you need medical help now and are unsure what to do, use NHS 111 online or call 111.</div>
+      <h2>Prepare before asking for help</h2>
+      <ul>
+        <li>Write down when symptoms started and whether they are improving, worsening or changing.</li>
+        <li>Record frequency, severity, triggers and how symptoms affect sleep, work, school, eating, walking or daily life.</li>
+        <li>List medicines, doses, missed doses, allergies, side effects and any recent changes.</li>
+        <li>Bring relevant test results, appointment letters, discharge summaries or clinic contact details.</li>
+        <li>Decide the main question you want answered before the appointment ends.</li>
+      </ul>
+      <h2>Questions to ask</h2>
+      <ul>
+        <li>What is the most appropriate next step?</li>
+        <li>Do I need tests, monitoring, a medication review or a referral?</li>
+        <li>What should I do if symptoms get worse while I am waiting?</li>
+        <li>Who should I contact for follow-up, and when should I expect a reply?</li>
+        <li>Are there trusted written resources I should read after this conversation?</li>
+      </ul>
+      <div class="callout"><strong>Useful next step:</strong> create clear notes with the <a href="appointment-planner.html">appointment planner</a> or print a <a href="symptom-diary.html">symptom diary</a> to show patterns over time.</div>
+    </section>
+    <section class="resource-panel">
+      <p class="eyebrow">Trusted links</p>
+      <h2>Read more from established sources</h2>
+      <div class="resource-list">
+        <a href="https://www.nhs.uk/conditions/hay-fever/" target="_blank" rel="noopener">NHS information on Hay fever</a>
+        <a href="https://www.nice.org.uk/" target="_blank" rel="noopener">NICE guidance and standards</a>
+        <a href="https://www.allergyuk.org/" target="_blank" rel="noopener">Allergy UK</a>
+        <a href="trusted-links.html">More trusted UK health links</a>
       </div>
     </section>
   </main>

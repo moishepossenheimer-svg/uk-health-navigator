@@ -1,4 +1,17 @@
-﻿<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to get a specialist referral in the UK</title><meta name="description" content="How to prepare for a GP appointment about a specialist referral in England."><link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/how-to-get-a-specialist-referral-uk.html"><link rel="icon" type="image/svg+xml" href="assets/logo.svg"><link rel="stylesheet" href="styles.css"></head><body><header class="site-header">
+﻿<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UK Health Navigator - find the right NHS service and prepare for appointments</title>
+  <meta name="description" content="Independent UK healthcare navigation tools, condition resource pages, appointment planners, symptom diaries and trusted links.">
+  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/">
+  <meta name="google-site-verification" content="FsNwn114JdTeafqLikJG85e0l6nQn3NgH4KXecyO5Ko" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home">
+  <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="index.html" aria-label="UK Health Navigator home">
         <img src="assets/logo.svg" alt="" width="44" height="44">
@@ -16,7 +29,174 @@
   </header>
   <div class="safety-strip">
     <strong>Emergency:</strong> call <strong>999</strong> or go to <strong>A&amp;E</strong>. <strong>Unsure and need help now:</strong> use <a href="https://111.nhs.uk/" target="_blank" rel="noopener">NHS 111</a>. Information only, not medical advice.
-  </div><main class='page'><h1>How to get a specialist referral in the UK</h1><section class='article'><p>For non-emergency hospital treatment, you will usually need a GP referral. Your job is to explain the problem clearly and ask what the next step should be.</p><h2>Before the GP appointment</h2><ul><li>Write your symptoms in date order.</li><li>List what you have already tried.</li><li>Bring test results, letters or photos if relevant.</li><li>Write how it affects daily life.</li></ul><h2>Questions to ask</h2><ul><li>Do my symptoms need specialist review?</li><li>Which specialty would be most relevant?</li><li>Should we do tests first?</li><li>Can I choose where I am referred?</li><li>What should I do if symptoms get worse while waiting?</li></ul></section></main><footer class="footer">
+  </div>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Independent UK health navigation</p>
+          <h1>Find the right route through UK healthcare.</h1>
+          <p class="sub">Practical, information-only help for choosing between GP, pharmacy, NHS 111, urgent care, A&amp;E, specialist teams and trusted support organisations. Prepare clearer notes before you speak to someone.</p>
+          <div class="actions">
+            <a class="btn primary" href="where-to-get-help.html">Find where to get help</a>
+            <a class="btn secondary" href="appointment-planner.html">Prepare appointment notes</a>
+          </div>
+          <div class="trust-row" aria-label="Site principles">
+            <div class="trust-item"><strong>Information only</strong><span>No diagnosis or treatment advice</span></div>
+            <div class="trust-item"><strong>UK routes</strong><span>GP, 111, pharmacy, A&amp;E and referrals</span></div>
+            <div class="trust-item"><strong>Trusted links</strong><span>NHS, NICE and major UK charities</span></div>
+          </div>
+        </div>
+        <aside class="route-card" aria-label="Quick service route checker">
+          <div class="panel-header"><span>Quick route checker</span><strong>What should I do next?</strong></div>
+          <label><span>Choose the closest situation</span><select id="quickService">
+            <option value="unsure">I need help but I am not sure where to go</option>
+            <option value="emergency">Possible life-threatening emergency</option>
+            <option value="ongoing">Ongoing symptoms, medication or referral question</option>
+            <option value="minor">Minor illness or medicine question</option>
+            <option value="mental">Mental health support</option>
+            <option value="crohns">Crohn's / IBD symptoms or flare concern</option>
+          </select></label>
+          <button class="btn primary full" onclick="quickService()">Show suggested route</button>
+          <div id="quickServiceResult" class="result">Choose a situation and press the button.</div>
+          <div class="route-visual" aria-label="Common service routes">
+            <div class="route-step"><b>1</b><span><strong>999 / A&amp;E</strong><span>Life-threatening emergency</span></span></div>
+            <div class="route-step"><b>2</b><span><strong>NHS 111</strong><span>Need help now and unsure</span></span></div>
+            <div class="route-step"><b>3</b><span><strong>GP / pharmacist</strong><span>Ongoing, routine or medicine questions</span></span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section navigator-section" aria-labelledby="guidedNavigatorTitle">
+      <div class="section-head">
+        <p class="eyebrow">Guided navigator</p>
+        <h2 id="guidedNavigatorTitle">Answer 10 quick questions to choose a sensible next route.</h2>
+        <p>This guided helper uses simple safety rules to suggest where to start: 999/A&amp;E, NHS 111, GP, pharmacy, an existing specialist team, or preparation tools. It does not diagnose or give treatment advice.</p>
+      </div>
+      <section class="tool-panel navigator-panel">
+        <div class="callout warning"><strong>Important:</strong> do not use this tool in place of urgent help. If it could be life-threatening, call 999 or go to A&amp;E.</div>
+        <div class="question-grid">
+          <label><span>1. Who is this for?</span><select id="navAge">
+            <option value="adult">Adult</option>
+            <option value="child">Child or young person</option>
+            <option value="older">Older adult or frailty concern</option>
+            <option value="pregnancy">Pregnant or recently gave birth</option>
+          </select></label>
+          <label><span>2. Could this be life-threatening?</span><select id="navEmergency">
+            <option value="no">No / not sure</option>
+            <option value="yes">Yes - possible emergency</option>
+          </select></label>
+          <label><span>3. Do they need help today?</span><select id="navUrgency">
+            <option value="unsure">Unsure</option>
+            <option value="now">Yes, help is needed now</option>
+            <option value="today">Yes, today but not immediately</option>
+            <option value="routine">No, routine appointment is OK</option>
+          </select></label>
+          <label><span>4. Main problem area</span><select id="navArea">
+            <option value="general">General symptoms or not sure</option>
+            <option value="breathing">Breathing, chest or severe allergy</option>
+            <option value="injury">Injury, burn, fall or wound</option>
+            <option value="infection">Possible infection or fever</option>
+            <option value="stomach">Stomach, bowel or urinary symptoms</option>
+            <option value="skin">Skin, rash or allergy</option>
+            <option value="mental">Mental health, panic, mood or safety</option>
+            <option value="medicine">Medicine, side effect or prescription question</option>
+            <option value="longterm">Existing long-term condition</option>
+          </select></label>
+          <label><span>5. How severe is it?</span><select id="navSeverity">
+            <option value="mild">Mild and manageable</option>
+            <option value="moderate">Moderate or affecting normal activities</option>
+            <option value="severe">Severe, unusual or hard to manage</option>
+          </select></label>
+          <label><span>6. How long has it been going on?</span><select id="navDuration">
+            <option value="hours">Hours / started today</option>
+            <option value="days">A few days</option>
+            <option value="weeks">More than 1-2 weeks</option>
+            <option value="ongoing">Ongoing or keeps coming back</option>
+          </select></label>
+          <label><span>7. Is it getting worse?</span><select id="navWorse">
+            <option value="no">No / stable</option>
+            <option value="yes">Yes, getting worse</option>
+            <option value="rapid">Rapidly worsening</option>
+          </select></label>
+          <fieldset class="check-group">
+            <legend>8. Any urgent warning signs?</legend>
+            <label><input type="checkbox" name="navRedFlags" value="breathing"> Severe breathing difficulty, blue lips, choking or severe allergic reaction</label>
+            <label><input type="checkbox" name="navRedFlags" value="chest"> Chest pain, signs of stroke, collapse, seizure or confusion</label>
+            <label><input type="checkbox" name="navRedFlags" value="bleeding"> Heavy bleeding, serious injury, severe burn or sudden severe pain</label>
+            <label><input type="checkbox" name="navRedFlags" value="none"> None of these</label>
+          </fieldset>
+          <label><span>9. Any mental health safety concern?</span><select id="navMentalRisk">
+            <option value="none">No immediate safety concern</option>
+            <option value="support">Needs mental health support but not immediate danger</option>
+            <option value="immediate">Immediate risk of harm or cannot stay safe</option>
+          </select></label>
+          <label><span>10. Is there already a care route?</span><select id="navExisting">
+            <option value="none">No existing team</option>
+            <option value="gp">GP already involved</option>
+            <option value="specialist">Existing specialist nurse, clinic or hospital team</option>
+            <option value="pharmacy">Mostly a medicine or pharmacy question</option>
+          </select></label>
+        </div>
+        <div class="button-row">
+          <button class="btn primary" onclick="guidedNavigator()">Suggest next route</button>
+          <button class="btn secondary" onclick="clearGuidedNavigator()">Clear answers</button>
+          <a class="btn secondary" href="ai-navigator.html">Open full page</a>
+        </div>
+        <div id="guidedNavigatorResult" class="result navigator-result">Answer the questions, then choose "Suggest next route".</div>
+      </section>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">What the site helps with</p>
+        <h2>Clear preparation for real conversations.</h2>
+        <p>Use these tools to organise symptoms, timelines, medicines, questions and next steps before contacting a UK health service.</p>
+      </div>
+      <div class="grid four">
+        <a class="card" href="appointment-planner.html"><span class="icon-box">AP</span><h3>Appointment planner</h3><p>Turn symptoms and questions into concise notes for a GP, nurse, pharmacist or specialist.</p></a>
+        <a class="card" href="symptom-diary.html"><span class="icon-box">SD</span><h3>Symptom diary</h3><p>Create a printable diary to show patterns over days or weeks.</p></a>
+        <a class="card" href="medication-tracker.html"><span class="icon-box">MT</span><h3>Medication tracker</h3><p>Record medicines, doses, missed doses, side effects and review questions.</p></a>
+        <a class="card" href="referral-checklist.html"><span class="icon-box">RC</span><h3>Referral checklist</h3><p>Prepare for referral conversations, hospital choices and waiting-list questions.</p></a>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div class="feature-inner">
+        <div>
+          <p class="eyebrow">Condition resource pages</p>
+          <h2>Useful routes, tracking prompts and trusted links.</h2>
+          <p>Each condition page focuses on what to prepare and where to ask for help. It avoids personalised advice and points back to NHS, NICE or established UK charities where relevant.</p>
+          <a class="btn secondary" href="conditions.html">Browse condition hubs</a>
+        </div>
+        <div class="mini-list">
+          <a href="condition-crohns-disease.html">Crohn's disease</a>
+          <a href="condition-asthma.html">Asthma</a>
+          <a href="condition-diabetes.html">Diabetes</a>
+          <a href="condition-anxiety.html">Anxiety</a>
+          <a href="condition-migraine.html">Migraine</a>
+          <a href="condition-eczema.html">Eczema</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Step-by-step guides</p>
+        <h2>Make the NHS process less confusing.</h2>
+        <p>Short guides for common navigation questions: urgent routes, referrals, waiting lists, appointments and blood tests.</p>
+      </div>
+      <div class="grid three">
+        <a class="card" href="choosing-the-right-nhs-service.html"><span class="card-kicker">Service routes</span><h3>Choosing the right NHS service</h3><p>A detailed guide to 999, A&amp;E, NHS 111, urgent treatment, GP, pharmacy and specialist teams.</p></a>
+        <a class="card" href="preparing-for-a-healthcare-appointment.html"><span class="card-kicker">Appointment skills</span><h3>Prepare for a GP or specialist appointment</h3><p>What to bring, what to say and how to leave with a clearer plan.</p></a>
+        <a class="card" href="gp-vs-111-vs-ae.html"><span class="card-kicker">Urgent routes</span><h3>GP vs NHS 111 vs A&amp;E</h3><p>Understand the difference between routine, urgent and emergency routes.</p></a>
+        <a class="card" href="how-to-get-a-specialist-referral-uk.html"><span class="card-kicker">Referrals</span><h3>How to ask for a specialist referral</h3><p>What to prepare, what to ask and what happens next.</p></a>
+        <a class="card" href="nhs-waiting-list-guide.html"><span class="card-kicker">Waiting lists</span><h3>NHS waiting list guide</h3><p>Questions to ask while waiting and what to do if symptoms change.</p></a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
     <div class="footer-grid">
       <div>
         <a class="footer-brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>UK Health Navigator</span></a>
@@ -44,7 +224,10 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script></body></html>
+  <script src="script.js"></script>
+</body>
+</html>
+
 
 
 
