@@ -1,4 +1,17 @@
-﻿<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blood test basics - how to ask about results</title><meta name="description" content="A non-diagnostic guide to asking better questions about blood test results."><link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/blood-test-basics.html"><link rel="icon" type="image/svg+xml" href="assets/logo.svg"><link rel="stylesheet" href="styles.css"></head><body><header class="site-header">
+﻿<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Appointment planner - UK Health Navigator</title>
+  <meta name="description" content="Prepare clear notes for a GP, specialist, nurse, pharmacist or hospital appointment.">
+  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/appointment-planner.html">
+  <meta name="google-site-verification" content="FsNwn114JdTeafqLikJG85e0l6nQn3NgH4KXecyO5Ko" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="index.html" aria-label="UK Health Navigator home">
         <img src="assets/logo.svg" alt="" width="44" height="44">
@@ -16,7 +29,33 @@
   </header>
   <div class="safety-strip">
     <strong>Emergency:</strong> call <strong>999</strong> or go to <strong>A&amp;E</strong>. <strong>Unsure and need help now:</strong> use <a href="https://111.nhs.uk/" target="_blank" rel="noopener">NHS 111</a>. Information only, not medical advice.
-  </div><main class='page'><h1>Blood test basics</h1><section class='article'><p>Blood tests are interpreted by healthcare professionals in the context of symptoms, history, medicines and previous results. This page helps you prepare questions; it does not interpret results.</p><h2>Questions to ask</h2><ul><li>Which results are outside the reference range?</li><li>Are these results new or similar to previous tests?</li><li>Could medicines or illness affect them?</li><li>Do I need repeat tests?</li><li>What symptoms should make me seek help sooner?</li></ul></section></main><footer class="footer">
+  </div>
+  <main class="page">
+    <div class="page-hero">
+      <p class="eyebrow">Tool</p>
+      <h1>Appointment planner</h1>
+      <p class="lead">Use this before a GP, pharmacist, nurse, hospital or specialist appointment. The result is a printable note you can bring with you.</p>
+    </div>
+    <section class="tool-panel">
+      <div class="tool-layout">
+        <div>
+          <h2>Make the appointment easier to use</h2>
+          <p>Short notes help you cover the most important points, especially when time is limited. Focus on what changed, how it affects daily life and what you need to know next.</p>
+          <div class="callout warning"><strong>Information only:</strong> this tool formats your notes. It does not assess symptoms, diagnose, or recommend treatment.</div>
+        </div>
+        <div>
+          <label><span>Main problem</span><textarea id="problem" rows="3" placeholder="What is the main issue you want help with?"></textarea></label>
+          <label><span>Timeline</span><textarea id="timeline" rows="3" placeholder="When did it start? Has it changed?"></textarea></label>
+          <label><span>Symptoms and impact</span><textarea id="symptoms" rows="3" placeholder="List symptoms, frequency, severity, triggers and daily impact."></textarea></label>
+          <label><span>Medicines, allergies and side effects</span><textarea id="meds" rows="3" placeholder="Medicines, dose, missed doses, side effects, allergies."></textarea></label>
+          <label><span>Questions</span><textarea id="questions" rows="3" placeholder="What do you want answered before you leave?"></textarea></label>
+          <div class="button-row"><button class="btn primary" onclick="makePlan()">Create notes</button><button class="btn secondary" onclick="window.print()">Print</button></div>
+          <div id="planResult" class="result"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
     <div class="footer-grid">
       <div>
         <a class="footer-brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>UK Health Navigator</span></a>
@@ -44,7 +83,12 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script></body></html>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
 
 
 

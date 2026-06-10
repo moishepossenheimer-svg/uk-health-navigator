@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Appointment planner - UK Health Navigator</title>
-  <meta name="description" content="Prepare clear notes for a GP, specialist, nurse, pharmacist or hospital appointment.">
-  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/appointment-planner.html">
+  <title>Guided health route navigator - UK Health Navigator</title>
+  <meta name="description" content="Answer 10 quick questions to choose a sensible UK health service route. Information only, not diagnosis or medical advice.">
+  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/ai-navigator.html">
+  <meta name="google-site-verification" content="FsNwn114JdTeafqLikJG85e0l6nQn3NgH4KXecyO5Ko" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,27 +32,80 @@
   </div>
   <main class="page">
     <div class="page-hero">
-      <p class="eyebrow">Tool</p>
-      <h1>Appointment planner</h1>
-      <p class="lead">Use this before a GP, pharmacist, nurse, hospital or specialist appointment. The result is a printable note you can bring with you.</p>
+      <p class="eyebrow">Guided navigator</p>
+      <h1>Answer 10 quick questions to choose a sensible next route.</h1>
+      <p class="lead">This guided helper uses simple safety rules to suggest a UK service route. It does not diagnose, treat, or give personalised medical advice.</p>
     </div>
-    <section class="tool-panel">
-      <div class="tool-layout">
-        <div>
-          <h2>Make the appointment easier to use</h2>
-          <p>Short notes help you cover the most important points, especially when time is limited. Focus on what changed, how it affects daily life and what you need to know next.</p>
-          <div class="callout warning"><strong>Information only:</strong> this tool formats your notes. It does not assess symptoms, diagnose, or recommend treatment.</div>
-        </div>
-        <div>
-          <label><span>Main problem</span><textarea id="problem" rows="3" placeholder="What is the main issue you want help with?"></textarea></label>
-          <label><span>Timeline</span><textarea id="timeline" rows="3" placeholder="When did it start? Has it changed?"></textarea></label>
-          <label><span>Symptoms and impact</span><textarea id="symptoms" rows="3" placeholder="List symptoms, frequency, severity, triggers and daily impact."></textarea></label>
-          <label><span>Medicines, allergies and side effects</span><textarea id="meds" rows="3" placeholder="Medicines, dose, missed doses, side effects, allergies."></textarea></label>
-          <label><span>Questions</span><textarea id="questions" rows="3" placeholder="What do you want answered before you leave?"></textarea></label>
-          <div class="button-row"><button class="btn primary" onclick="makePlan()">Create notes</button><button class="btn secondary" onclick="window.print()">Print</button></div>
-          <div id="planResult" class="result"></div>
-        </div>
+    <section class="tool-panel navigator-panel">
+      <div class="callout urgent"><strong>Use urgent services when needed:</strong> call 999 or go to A&amp;E for a possible life-threatening emergency. Use NHS 111 if help is needed now and you are unsure what to do.</div>
+      <div class="question-grid">
+        <label><span>1. Who is this for?</span><select id="navAge">
+          <option value="adult">Adult</option>
+          <option value="child">Child or young person</option>
+          <option value="older">Older adult or frailty concern</option>
+          <option value="pregnancy">Pregnant or recently gave birth</option>
+        </select></label>
+        <label><span>2. Could this be life-threatening?</span><select id="navEmergency">
+          <option value="no">No / not sure</option>
+          <option value="yes">Yes - possible emergency</option>
+        </select></label>
+        <label><span>3. Do they need help today?</span><select id="navUrgency">
+          <option value="unsure">Unsure</option>
+          <option value="now">Yes, help is needed now</option>
+          <option value="today">Yes, today but not immediately</option>
+          <option value="routine">No, routine appointment is OK</option>
+        </select></label>
+        <label><span>4. Main problem area</span><select id="navArea">
+          <option value="general">General symptoms or not sure</option>
+          <option value="breathing">Breathing, chest or severe allergy</option>
+          <option value="injury">Injury, burn, fall or wound</option>
+          <option value="infection">Possible infection or fever</option>
+          <option value="stomach">Stomach, bowel or urinary symptoms</option>
+          <option value="skin">Skin, rash or allergy</option>
+          <option value="mental">Mental health, panic, mood or safety</option>
+          <option value="medicine">Medicine, side effect or prescription question</option>
+          <option value="longterm">Existing long-term condition</option>
+        </select></label>
+        <label><span>5. How severe is it?</span><select id="navSeverity">
+          <option value="mild">Mild and manageable</option>
+          <option value="moderate">Moderate or affecting normal activities</option>
+          <option value="severe">Severe, unusual or hard to manage</option>
+        </select></label>
+        <label><span>6. How long has it been going on?</span><select id="navDuration">
+          <option value="hours">Hours / started today</option>
+          <option value="days">A few days</option>
+          <option value="weeks">More than 1-2 weeks</option>
+          <option value="ongoing">Ongoing or keeps coming back</option>
+        </select></label>
+        <label><span>7. Is it getting worse?</span><select id="navWorse">
+          <option value="no">No / stable</option>
+          <option value="yes">Yes, getting worse</option>
+          <option value="rapid">Rapidly worsening</option>
+        </select></label>
+        <fieldset class="check-group">
+          <legend>8. Any urgent warning signs?</legend>
+          <label><input type="checkbox" name="navRedFlags" value="breathing"> Severe breathing difficulty, blue lips, choking or severe allergic reaction</label>
+          <label><input type="checkbox" name="navRedFlags" value="chest"> Chest pain, signs of stroke, collapse, seizure or confusion</label>
+          <label><input type="checkbox" name="navRedFlags" value="bleeding"> Heavy bleeding, serious injury, severe burn or sudden severe pain</label>
+          <label><input type="checkbox" name="navRedFlags" value="none"> None of these</label>
+        </fieldset>
+        <label><span>9. Any mental health safety concern?</span><select id="navMentalRisk">
+          <option value="none">No immediate safety concern</option>
+          <option value="support">Needs mental health support but not immediate danger</option>
+          <option value="immediate">Immediate risk of harm or cannot stay safe</option>
+        </select></label>
+        <label><span>10. Is there already a care route?</span><select id="navExisting">
+          <option value="none">No existing team</option>
+          <option value="gp">GP already involved</option>
+          <option value="specialist">Existing specialist nurse, clinic or hospital team</option>
+          <option value="pharmacy">Mostly a medicine or pharmacy question</option>
+        </select></label>
       </div>
+      <div class="button-row">
+        <button class="btn primary" onclick="guidedNavigator()">Suggest next route</button>
+        <button class="btn secondary" onclick="clearGuidedNavigator()">Clear answers</button>
+      </div>
+      <div id="guidedNavigatorResult" class="result navigator-result">Answer the questions, then choose "Suggest next route".</div>
     </section>
   </main>
   <footer class="footer">
@@ -67,7 +121,6 @@
         <a href="ai-navigator.html">Guided navigator</a>
         <a href="condition-finder.html">Condition finder</a>
         <a href="appointment-planner.html">Appointment planner</a>
-        <a href="symptom-diary.html">Symptom diary</a>
       </div>
       <div>
         <h2>Trusted sources</h2>
