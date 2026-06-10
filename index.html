@@ -1,9 +1,147 @@
-<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UK Health Navigator — Find the right NHS service and prepare for appointments</title><meta name="description" content="Professional UK healthcare navigation tools, condition hubs, appointment planners, symptom diaries and trusted links."><link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/"><link rel="icon" type="image/svg+xml" href="assets/logo.svg"><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><nav class="nav">
-<a class="brand" href="index.html"><img src="assets/logo.svg" alt=""> <span>UK Health Navigator</span></a>
-<button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
-<div class="links" id="links"><a href="where-to-get-help.html">Start here</a><a href="conditions.html">Conditions</a><a href="tools.html">Tools</a><a href="guides.html">Guides</a><a href="trusted-links.html">Trusted links</a></div>
-</nav></header>
-<div class="safety-strip"><strong>Emergency?</strong> If it may be life-threatening, call <strong>999</strong> or go to A&E. This website is information only, not medical advice.</div><main><section class="hero"><div class="hero-copy"><p class="eyebrow">UK healthcare navigation, made simpler</p><h1>Know where to ask, what to say, and what to prepare.</h1><p class="sub">UK Health Navigator helps people understand whether to use a GP, NHS 111, pharmacy, urgent treatment centre, A&E, a specialist team or a trusted charity — and helps them prepare clear notes before speaking to someone.</p><div class="actions"><a class="btn primary" href="where-to-get-help.html">Find where to get help</a><a class="btn secondary" href="condition-finder.html">Use condition finder</a></div><div class="trust-row"><span>Official links</span><span>Printable tools</span><span>Condition hubs</span></div></div><div class="hero-panel"><div class="panel-header"><span>Quick checker</span><strong>What should I do next?</strong></div><label>Choose the closest situation<select id="quickService"><option value="unsure">I need help but I am not sure where to go</option><option value="emergency">Possible life-threatening emergency</option><option value="ongoing">Ongoing symptoms or referral question</option><option value="minor">Minor illness or medicine question</option><option value="mental">Mental health support</option><option value="crohns">Crohn's / IBD symptoms or flare concern</option></select></label><button class="btn primary full" onclick="quickService()">Show suggested route</button><div id="quickServiceResult" class="result">Choose a situation and press the button.</div></div></section>
-<section class="section"><div class="section-head"><p class="eyebrow">Most useful tools</p><h2>Practical tools, not diagnosis.</h2><p>These tools help users prepare better information, ask clearer questions and keep track of what happened.</p></div><div class="grid four"><a class="card" href="appointment-planner.html"><span>📝</span><h3>Appointment planner</h3><p>Turn symptoms and questions into clear notes for your GP or specialist.</p></a><a class="card" href="symptom-diary.html"><span>📅</span><h3>Symptom diary</h3><p>Track changes over days or weeks to explain patterns clearly.</p></a><a class="card" href="medication-tracker.html"><span>💊</span><h3>Medication tracker</h3><p>Record medicines, doses, missed doses and review questions.</p></a><a class="card" href="referral-checklist.html"><span>➡️</span><h3>Referral checklist</h3><p>Prepare for referral conversations and hospital appointment choices.</p></a></div></section>
-<section class="section feature-band"><div><p class="eyebrow">Condition hubs</p><h2>Start with common UK health questions.</h2><p>Each hub explains the usual route for help, useful information to track, questions to ask and trusted official links.</p><a class="btn primary" href="conditions.html">Browse condition hubs</a></div><div class="mini-list"><a href="condition-crohns-disease.html">Crohn's Disease</a><a href="condition-asthma.html">Asthma</a><a href="condition-diabetes.html">Diabetes</a><a href="condition-anxiety.html">Anxiety</a><a href="condition-migraine.html">Migraine</a><a href="condition-eczema.html">Eczema</a></div></section>
-<section class="section"><div class="section-head"><p class="eyebrow">Step-by-step guides</p><h2>Detailed pages that make the NHS process less confusing.</h2></div><div class="grid four"><a class="card" href="gp-vs-111-vs-ae.html"><h3>GP vs NHS 111 vs A&E</h3><p>Understand the difference between routine, urgent and emergency routes.</p></a><a class="card" href="how-to-get-a-specialist-referral-uk.html"><h3>How to ask for a specialist referral</h3><p>What to prepare, what to ask and what happens next.</p></a><a class="card" href="nhs-waiting-list-guide.html"><h3>NHS waiting list guide</h3><p>Questions to ask while waiting and what to do if symptoms change.</p></a><a class="card" href="blood-test-basics.html"><h3>Blood test basics</h3><p>How to prepare sensible questions about results.</p></a></div></section></main><footer class="footer"><div class="footer-grid"><div><strong>UK Health Navigator</strong><p>Plain-English help for finding the right UK health service and preparing for appointments.</p></div><div><h4>Use the site</h4><a href="where-to-get-help.html">Where to get help</a><a href="condition-finder.html">Condition finder</a><a href="appointment-planner.html">Appointment planner</a><a href="symptom-diary.html">Symptom diary</a></div><div><h4>Safety note</h4><p>This site does not diagnose, treat, or replace the NHS, a GP, pharmacist, nurse, specialist team, NHS 111 or emergency services.</p></div></div></footer><script src="script.js"></script></body></html>
+﻿<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UK Health Navigator - find the right NHS service and prepare for appointments</title>
+  <meta name="description" content="Independent UK healthcare navigation tools, condition resource pages, appointment planners, symptom diaries and trusted links.">
+  <link rel="canonical" href="https://moishepossenheimer-svg.github.io/uk-health-navigator/">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home">
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="UK Health Navigator home">
+        <img src="assets/logo.svg" alt="" width="44" height="44">
+        <span class="brand-copy"><strong>UK Health Navigator</strong><small>Information-only UK healthcare navigation</small></span>
+      </a>
+      <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <div class="links" id="links">
+        <a href="where-to-get-help.html">Start here</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="tools.html">Tools</a>
+        <a href="guides.html">Guides</a>
+        <a href="trusted-links.html">Trusted links</a>
+      </div>
+    </nav>
+  </header>
+  <div class="safety-strip">
+    <strong>Emergency:</strong> call <strong>999</strong> or go to <strong>A&amp;E</strong>. <strong>Unsure and need help now:</strong> use <a href="https://111.nhs.uk/" target="_blank" rel="noopener">NHS 111</a>. Information only, not medical advice.
+  </div>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Independent UK health navigation</p>
+          <h1>Find the right route through UK healthcare.</h1>
+          <p class="sub">Practical, information-only help for choosing between GP, pharmacy, NHS 111, urgent care, A&amp;E, specialist teams and trusted support organisations. Prepare clearer notes before you speak to someone.</p>
+          <div class="actions">
+            <a class="btn primary" href="where-to-get-help.html">Find where to get help</a>
+            <a class="btn secondary" href="appointment-planner.html">Prepare appointment notes</a>
+          </div>
+          <div class="trust-row" aria-label="Site principles">
+            <div class="trust-item"><strong>Information only</strong><span>No diagnosis or treatment advice</span></div>
+            <div class="trust-item"><strong>UK routes</strong><span>GP, 111, pharmacy, A&amp;E and referrals</span></div>
+            <div class="trust-item"><strong>Trusted links</strong><span>NHS, NICE and major UK charities</span></div>
+          </div>
+        </div>
+        <aside class="route-card" aria-label="Quick service route checker">
+          <div class="panel-header"><span>Quick route checker</span><strong>What should I do next?</strong></div>
+          <label><span>Choose the closest situation</span><select id="quickService">
+            <option value="unsure">I need help but I am not sure where to go</option>
+            <option value="emergency">Possible life-threatening emergency</option>
+            <option value="ongoing">Ongoing symptoms, medication or referral question</option>
+            <option value="minor">Minor illness or medicine question</option>
+            <option value="mental">Mental health support</option>
+            <option value="crohns">Crohn's / IBD symptoms or flare concern</option>
+          </select></label>
+          <button class="btn primary full" onclick="quickService()">Show suggested route</button>
+          <div id="quickServiceResult" class="result">Choose a situation and press the button.</div>
+          <div class="route-visual" aria-label="Common service routes">
+            <div class="route-step"><b>1</b><span><strong>999 / A&amp;E</strong><span>Life-threatening emergency</span></span></div>
+            <div class="route-step"><b>2</b><span><strong>NHS 111</strong><span>Need help now and unsure</span></span></div>
+            <div class="route-step"><b>3</b><span><strong>GP / pharmacist</strong><span>Ongoing, routine or medicine questions</span></span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">What the site helps with</p>
+        <h2>Clear preparation for real conversations.</h2>
+        <p>Use these tools to organise symptoms, timelines, medicines, questions and next steps before contacting a UK health service.</p>
+      </div>
+      <div class="grid four">
+        <a class="card" href="appointment-planner.html"><span class="icon-box">AP</span><h3>Appointment planner</h3><p>Turn symptoms and questions into concise notes for a GP, nurse, pharmacist or specialist.</p></a>
+        <a class="card" href="symptom-diary.html"><span class="icon-box">SD</span><h3>Symptom diary</h3><p>Create a printable diary to show patterns over days or weeks.</p></a>
+        <a class="card" href="medication-tracker.html"><span class="icon-box">MT</span><h3>Medication tracker</h3><p>Record medicines, doses, missed doses, side effects and review questions.</p></a>
+        <a class="card" href="referral-checklist.html"><span class="icon-box">RC</span><h3>Referral checklist</h3><p>Prepare for referral conversations, hospital choices and waiting-list questions.</p></a>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div class="feature-inner">
+        <div>
+          <p class="eyebrow">Condition resource pages</p>
+          <h2>Useful routes, tracking prompts and trusted links.</h2>
+          <p>Each condition page focuses on what to prepare and where to ask for help. It avoids personalised advice and points back to NHS, NICE or established UK charities where relevant.</p>
+          <a class="btn secondary" href="conditions.html">Browse condition hubs</a>
+        </div>
+        <div class="mini-list">
+          <a href="condition-crohns-disease.html">Crohn's disease</a>
+          <a href="condition-asthma.html">Asthma</a>
+          <a href="condition-diabetes.html">Diabetes</a>
+          <a href="condition-anxiety.html">Anxiety</a>
+          <a href="condition-migraine.html">Migraine</a>
+          <a href="condition-eczema.html">Eczema</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Step-by-step guides</p>
+        <h2>Make the NHS process less confusing.</h2>
+        <p>Short guides for common navigation questions: urgent routes, referrals, waiting lists, appointments and blood tests.</p>
+      </div>
+      <div class="grid three">
+        <a class="card" href="gp-vs-111-vs-ae.html"><span class="card-kicker">Urgent routes</span><h3>GP vs NHS 111 vs A&amp;E</h3><p>Understand the difference between routine, urgent and emergency routes.</p></a>
+        <a class="card" href="how-to-get-a-specialist-referral-uk.html"><span class="card-kicker">Referrals</span><h3>How to ask for a specialist referral</h3><p>What to prepare, what to ask and what happens next.</p></a>
+        <a class="card" href="nhs-waiting-list-guide.html"><span class="card-kicker">Waiting lists</span><h3>NHS waiting list guide</h3><p>Questions to ask while waiting and what to do if symptoms change.</p></a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>UK Health Navigator</span></a>
+        <p>Plain-English help for finding the right UK health service, preparing for appointments and keeping useful notes.</p>
+        <p class="small">Independent information site. Not affiliated with or approved by the NHS.</p>
+      </div>
+      <div>
+        <h2>Use the site</h2>
+        <a href="where-to-get-help.html">Where to get help</a>
+        <a href="condition-finder.html">Condition finder</a>
+        <a href="appointment-planner.html">Appointment planner</a>
+        <a href="symptom-diary.html">Symptom diary</a>
+      </div>
+      <div>
+        <h2>Trusted sources</h2>
+        <a href="https://www.nhs.uk/" target="_blank" rel="noopener">NHS website</a>
+        <a href="https://111.nhs.uk/" target="_blank" rel="noopener">NHS 111 online</a>
+        <a href="https://www.nice.org.uk/" target="_blank" rel="noopener">NICE guidance</a>
+        <a href="trusted-links.html">More trusted links</a>
+      </div>
+      <div>
+        <h2>Safety note</h2>
+        <p>This site does not diagnose, treat, or replace a GP, pharmacist, nurse, specialist team, NHS 111 or emergency services.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
